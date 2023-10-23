@@ -4,9 +4,9 @@ using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
 using System.Diagnostics.Eventing.Reader;
 using System.Runtime.InteropServices;
-// author: mehalimes
-// Yet Another Permutation Problem Codeforces Solution 
-// IDEA : Editorial
+// author: mehalimes 
+// IDEA : mehalimes
+// 1851C Codeforces Solution
 namespace Project1
 {
     internal class Program
