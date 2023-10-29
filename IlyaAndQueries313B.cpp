@@ -5,7 +5,7 @@
 #define pf push_front
 
 // author : mehalimes
-// IDEA : Editorial
+// IDEA :   mehalimes
 
 int main(){
     using namespace std;
