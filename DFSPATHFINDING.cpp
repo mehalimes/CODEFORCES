@@ -23,7 +23,7 @@ vector<vector<char>> createMaze(){
 
 void printMaze(vector<vector<char>> &maze){
     for(int i = 0; i < (int)maze.size(); i++){
-        for(int j = 0; j < (int)maze[0].size(); j++){
+        for(int j = 0; j < (int)maze[i].size(); j++){
             cout << maze[i][j] << " ";
         }
         cout << "\n";
