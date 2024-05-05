@@ -13,8 +13,8 @@ const char EXIT = 'X';
 vector<vector<char>> createMaze(){
     vector<vector<char>> maze = {
         {'O', 'O', 'O', 'O', 'O'},
-        {'#', 'O', 'O', 'O', 'O'},
-        {'X', '#', 'O', 'O', 'O'},
+        {'O', 'O', '#', 'O', 'O'},
+        {'O', 'O', 'X', 'O', 'O'},
         {'O', 'O', 'O', 'O', 'O'},
         {'O', 'O', 'O', 'O', 'O'},
     };
@@ -41,9 +41,9 @@ bool solveMazeDFS(vector<vector<char>> &maze, int x, int y, string &path, vector
             return true;
         }
         else {
-            char directions[] = {'R', 'L', 'U', 'D'};
-            int dx[] = {1,-1, 0, 0};
-            int dy[] = {0, 0, -1, 1};
+            char directions[4] = {'R', 'L', 'U', 'D'};
+            int dx[4] = {1,-1, 0, 0};
+            int dy[4] = {0, 0, -1, 1};
             for(int i = 0; i < 4; i++){
                 path += directions[i];
                 if(solveMazeDFS(maze, x + dy[i], y + dx[i], path, visited)){
@@ -82,7 +82,11 @@ void changeMazeByPath(vector<vector<char>> &maze, string path){
 int main(){
     vector<vector<char>> maze = createMaze();
     string path = "";
-    vector<vector<bool>> visited(maze.size(), vector<bool>(maze[0].size(), false));
+    vector<vector<bool>> visited;
+    for(int i = 0; i < (int)maze.size(); i++){
+        vector<bool> v(maze[i].size(), false);
+        visited.push_back(v);
+    }
     int startX = 0;
     int startY = maze[0].size() - 1;
     if(solveMazeDFS(maze, startX, startY, path, visited)){
