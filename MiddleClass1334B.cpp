@@ -3,7 +3,6 @@
 #include <algorithm>
 #define ll long long int
 using namespace std;
-// bu soruyu pushlamadın.
 
 int main(){
     ios::sync_with_stdio(0);
